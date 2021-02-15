@@ -35,7 +35,7 @@ public class PersonService {
         return iPersonDao.deletePersonById(id);
     }
 
-    public int updatePerson(Long id, Person person){
-        return iPersonDao.updatePersonByI(id, person);
+    public int updatePerson(Long id, String nameUpdate){
+        return iPersonDao.updatePersonByI(id, nameUpdate);
     }
 }

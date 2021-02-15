@@ -20,5 +20,5 @@ public interface IPersonDao {
 
     int deletePersonById(Long id);
 
-    int updatePersonByI(Long id, Person person);
+    int updatePersonByI(Long id, String person);
 }

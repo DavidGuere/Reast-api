@@ -4,6 +4,7 @@ import com.example.JPA_app.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -44,7 +45,10 @@ public class PersonDataAccessService implements IPersonDao {
     }
 
     @Override
-    public int updatePersonByI(Long id, Person person) {
+    @Transactional
+    public int updatePersonByI(Long id, String personName) {
+        Person person = iPersonRepository.findById(id).get();
+        person.setName(personName);
         return 0;
     }
 }
